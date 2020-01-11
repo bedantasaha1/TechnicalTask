@@ -68,7 +68,7 @@ function myFunction() {
   results=result(b1[0],b1[1],b1[2])
   document.getElementById("demo2").innerHTML =results;
   }
-  else if ((a1.length==3)&& (Array.isArray(a1[0])==true) && (Array.isArray(a1[2])==true)){ //when array is in a form [[operand,"operator",operand],"ope",[operand,"operator",operand]]
+  else if ((a1.length==3)&& (Array.isArray(a1[0])==true) && (Array.isArray(a1[2])==true)){ //when array is in a form [[operand,"operator",operand],"operator",[operand,"operator",operand]]
   b1=[];
   b1[0]=result(a1[0][0],a1[0][1],a1[0][2])
   b1[1]=a1[1];
