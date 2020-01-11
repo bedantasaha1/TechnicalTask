@@ -4,7 +4,6 @@
 
 <h2>Arithmetic Operations With Array Input.</h2>
 
-
 <p id="demo"></p>
 <input type="text" id="t1" value='[1, "Plus", 3]'/>
 <button onclick="myFunction()">Solve it</button>
@@ -46,14 +45,14 @@ function Divide(a,b){
 
 function myFunction() {
   try{
-  var a1 = JSON.parse(document.getElementById("t1").value);
+  var a1 = JSON.parse(document.getElementById("t1").value); //taking the array input
   
   
-  if ((a1.length==3) && (Array.isArray(a1[0])==false) && (Array.isArray(a1[2])==false)){
+  if ((a1.length==3) && (Array.isArray(a1[0])==false) && (Array.isArray(a1[2])==false)){  //when the array is in a form [operand,"operator",operand]
   results=result(a1[0],a1[1],a1[2])
   document.getElementById("demo2").innerHTML =results;
   }
-  else if ((a1.length==3)&& (Array.isArray(a1[0])==true) && (Array.isArray(a1[2])==false)){
+  else if ((a1.length==3)&& (Array.isArray(a1[0])==true) && (Array.isArray(a1[2])==false)){  //when the array is in a form [[operand,"operator",operand],"operator",operand]
   b1=[];
   b1[0]=result(a1[0][0],a1[0][1],a1[0][2])
   b1[1]=a1[1];
@@ -61,7 +60,7 @@ function myFunction() {
   results=result(b1[0],b1[1],b1[2])
   document.getElementById("demo2").innerHTML =results;
   }
-  else if ((a1.length==3)&& (Array.isArray(a1[0])==false) && (Array.isArray(a1[2])==true)){
+  else if ((a1.length==3)&& (Array.isArray(a1[0])==false) && (Array.isArray(a1[2])==true)){ //when array is in a form [operand,"operator",[operand,"operator",operand]]
   b1=[];
   b1[0]=a1[0];
   b1[1]=a1[1];
@@ -69,7 +68,7 @@ function myFunction() {
   results=result(b1[0],b1[1],b1[2])
   document.getElementById("demo2").innerHTML =results;
   }
-  else if ((a1.length==3)&& (Array.isArray(a1[0])==true) && (Array.isArray(a1[2])==true)){
+  else if ((a1.length==3)&& (Array.isArray(a1[0])==true) && (Array.isArray(a1[2])==true)){ //when array is in a form [[operand,"operator",operand],"ope",[operand,"operator",operand]]
   b1=[];
   b1[0]=result(a1[0][0],a1[0][1],a1[0][2])
   b1[1]=a1[1];
